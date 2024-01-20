@@ -1,7 +1,7 @@
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-export default function SiteFooter() {
+export default function PageFooter() {
   return (
     <div className="fixed w-full bottom-0 left-0 right-0 p-4 text-blue-500">
       <div className="flex justify-between items-center">
