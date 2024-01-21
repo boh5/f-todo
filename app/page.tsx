@@ -6,6 +6,7 @@ import Overlay from "@/components/Overlay";
 import PageFooter from "@/components/PageFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { DropDownItemData } from "@/components/dropdown/DropDown";
+import useInitTodoList from "@/hooks/init-todo";
 import { useSearchStore } from "@/store/searchStore";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { PencilIcon, Square2StackIcon } from "@heroicons/react/24/outline";
@@ -24,6 +25,8 @@ const dropDownItems: DropDownItemData[] = [
 export default function Home() {
   const focused = useSearchStore((state) => state.focused);
   const [parent, enableAnimations] = useAutoAnimate();
+
+  useInitTodoList();
 
   return (
     <div

@@ -1,4 +1,4 @@
-import useInitTodoList from "@/hooks/init-todo";
+import { useTodolistStore } from "@/store/todolistStore";
 import dayjs from "dayjs";
 import { groupBy, sortBy } from "lodash";
 import { useMemo } from "react";
@@ -7,7 +7,7 @@ export default function useGroupTodolist() {
   /**
    * 分组 todolist
    */
-  const todoList = useInitTodoList();
+  const todoList = useTodolistStore((state) => state.list);
 
   const { notCompleted, completed } = useMemo(() => {
     const groupedIsCompleted = groupBy(todoList, (item: TodoTypes.TTodo) => {
