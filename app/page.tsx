@@ -1,15 +1,16 @@
 "use client";
 
 import PageBody from "@/app/components/page/PageBody";
-import PageFooter from "@/app/components/page/PageFooter";
 import Search from "@/app/components/page/Search";
 import Overlay from "@/components/Overlay";
+import PageFooter from "@/components/PageFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { DropDownItemData } from "@/components/dropdown/DropDown";
 import useInitTodoList from "@/hooks/init-todo";
 import { useSearchStore } from "@/store/searchStore";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { PencilIcon, Square2StackIcon } from "@heroicons/react/24/outline";
+import clsx from "clsx";
 
 const dropDownItems: DropDownItemData[] = [
   {
@@ -30,14 +31,14 @@ export default function Home() {
   return (
     <div
       ref={parent}
-      className="space-y-2 p-4 h-screen w-full dark:bg-zinc-900 bg-gray-100 text-black dark:text-white"
+      className="h-screen w-full dark:bg-zinc-900 bg-gray-100 text-black dark:text-white"
     >
       {!focused && <SiteHeader dropDownItems={dropDownItems} />}
-      <div>
+      <div className={clsx("px-4", focused && "pt-4")}>
         <Search />
         <PageBody />
       </div>
-      <PageFooter />
+      <PageFooter addList={true} />
       {focused && <Overlay />}
     </div>
   );

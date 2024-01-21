@@ -1,5 +1,8 @@
+"use client";
+
 import Card from "@/app/components/page/Card";
 import MyList from "@/app/components/page/MyList";
+import useTodoCount from "@/hooks/todo-count";
 import {
   CalendarDaysIcon,
   CalendarIcon,
@@ -7,11 +10,17 @@ import {
   FlagIcon,
   InboxIcon,
 } from "@heroicons/react/24/outline";
+import React from "react";
 
-const cards = [
+const cards: {
+  name: "today" | "plan" | "all" | "flag" | "done";
+  href: string;
+  title: string;
+  icon: React.ReactNode;
+}[] = [
   {
     name: "today",
-    href: "#",
+    href: "/today",
     title: "今天",
     icon: <CalendarIcon className="text-white bg-blue-500 p-1 rounded-full" />,
   },
@@ -46,8 +55,10 @@ const cards = [
 ];
 
 export default function PageBody() {
+  const counts = useTodoCount();
+
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col mt-4 space-y-2">
       <div className="flex flex-wrap justify-between">
         {cards.map((card) => (
           <Card
@@ -55,6 +66,7 @@ export default function PageBody() {
             title={card.title}
             icon={card.icon}
             href={card.href}
+            count={counts[card.name]}
           />
         ))}
       </div>

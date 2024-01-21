@@ -23,7 +23,7 @@ export default function SiteHeader({
   const [parent, enableAnimations] = useAutoAnimate();
 
   return (
-    <div className="flex justify-between w-full z-50">
+    <div className="flex justify-between w-full z-50 py-4 px-2">
       <div className="w-1/4">
         {goBackData && (
           <Link
