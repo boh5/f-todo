@@ -5,8 +5,8 @@ declare namespace TodoTypes {
     comment: string;
     url: string;
     completed: boolean;
-    created_at: Date;
-    updated_at: Date;
-    deadline?: Date;
+    created_at: string;
+    updated_at: string;
+    deadline?: string;
   };
 }

@@ -1,5 +1,16 @@
 import { create } from "zustand";
 
+export const initialTodo: TodoTypes.TTodo = {
+  id: 0,
+  title: "",
+  comment: "",
+  url: "",
+  completed: false,
+  deadline: "",
+  created_at: "",
+  updated_at: "",
+};
+
 type TodolistState = {
   list: TodoTypes.TTodo[];
 };
