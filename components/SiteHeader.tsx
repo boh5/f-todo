@@ -49,8 +49,8 @@ export default function SiteHeader({
             <DropDown items={dropDownItems} />
           </div>
         )}
-        {showDropDown && <Overlay onClick={() => setShowDropDown(false)} />}
       </div>
+      {showDropDown && <Overlay onClick={() => setShowDropDown(false)} />}
     </div>
   );
 }
