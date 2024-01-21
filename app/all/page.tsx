@@ -30,7 +30,7 @@ const dropDownItems: DropDownItemData[] = [
     icon: <PrinterIcon className="w-5" />,
   },
 ];
-export default function Home() {
+export default function All() {
   const todoList = useInitTodoList();
 
   return (
