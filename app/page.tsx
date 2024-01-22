@@ -12,8 +12,6 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { PencilIcon, Square2StackIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
-export const runtime = "edge";
-
 const dropDownItems: DropDownItemData[] = [
   {
     title: "编辑列表",

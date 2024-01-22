@@ -12,8 +12,6 @@ import {
   PrinterIcon,
 } from "@heroicons/react/24/outline";
 
-export const runtime = "edge";
-
 const goBackData: TGoBackData = {
   title: "列表",
   href: "/",
