@@ -16,6 +16,8 @@ const goBackData: TGoBackData = {
   href: "/",
 };
 
+export const runtime = "edge";
+
 const dropDownItems: DropDownItemData[] = [
   {
     title: "选择提醒事项",
